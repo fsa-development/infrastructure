@@ -1,0 +1,20 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:LeadsList type="json">
+	{
+		"leads":
+		{
+			"agent" : "usr",
+            "tele" : "phone",
+            "first_name" : "displayname1",
+            "last_name" : "displayname2",
+            "email" : "contactmail"
+		}
+	}
+	</Component:LeadsList>
+	<Render:Markup bind="LeadsList" tag="tr" class="instance selectable" data-self="[@ _self_id @]">
+                <!-- td class="center col-sm-1">[@ usr @]</td -->
+                <td >[@ displayname1 @] [@ displayname2 @]</td>
+                <td >[@ phone @]</td>
+                <td >[@ contactmail @]</td>
+	</Render:Markup>
+</Template>

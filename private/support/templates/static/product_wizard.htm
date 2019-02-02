@@ -1,0 +1,42 @@
+<div class="modal-content Content">
+    <form method="post" action="dataset://products">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h4>Product Editor</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="sr-only" for="_name">Product Name</label>
+            <input type="text" name="_name" /><br/><br/>
+            <label class="sr-only" for="_name">Manufacturer</label>
+            <input type="text" name="_creator" /><br/><br/>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="_product_line">Series</label>
+            <input type="text" name="_product_line" /><br/><br/>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="_line_tips">Nitrogen</label>
+            <input style="width: 2em;" type="text" name="_nitro" /><br/><br/>
+            <label class="sr-only" for="_line_tips">Phosphorous</label>
+            <input style="width: 2em;" type="text" name="_phosph" /><br/><br/>
+            <label class="sr-only" for="_line_tips">Potassium</label>
+            <input style="width: 2em;" type="text" name="_pot" /><br/><br/>
+        </div>
+        <div class="form-group">
+        <label class="sr-only" for="_content" >Description</label>
+        <label class="sr-only" for="_line_tips" style="float: right;">Series Description</label>
+        <br/><br/>
+        <textarea rows="4" name="_content" style="float: left;width: 45%;"></textarea>            
+        <textarea rows="4" style="width: 45%;" name="_line_tips" ></textarea><br/><br/>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <ul class="controls">
+            <li class="control" data-context='{"_self_id":"", "_response_target":"#ProductLibrary"}' data-role="autoform" data-intent='{"REFRESH":{"Product":"Save"}}'>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+            </li></ul>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    </div>
+    </form>
+</div>

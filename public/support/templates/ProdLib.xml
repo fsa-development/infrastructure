@@ -1,0 +1,66 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:ProdLib type="json">
+	{
+		"products":
+		{
+			"title" : "name",
+			"markup" : "content",
+			"manufacturer" : "creator",
+			"series" : "product_line",
+			"series_info" : "line_tips",
+			"nitro" : "nitro",
+			"phosphor" : "phosph",
+			"potass" : "pot",
+			"sulfur" : "sulfide",
+			"id" : "MessageID"
+		}
+	}
+	</Component:ProdLib>
+	
+	<Render:Markup bind="ProdLib" tag="tr" class="instance selectable" data-self="[@ _self @]">
+                <td class="center uniformjs"><div class="checker" id="uniform-undefined-[@ MessageID @]"><span><input type="checkbox" value="[@ MessageID @]" style="opacity: 0;" /></span></div></td>
+                <td class="center">[@ name @]</td>
+                <td class="center">[@ content @]</td>
+                <td class="center">[@ creator @]</td>
+                <td class="center">[@ product_line @]</td>
+                <td class="center">[@ nitro @]</td>
+                <td class="center">[@ phosph @]</td>
+                <td class="center">[@ pot @]</td>
+                <td class="center">
+                <ul class="controls" data-role="Service">
+                    <li class="control" data-context='{"_self_id":[@ MessageID @], "_response_target":"#ProductWizard"}' data-intent='{"REFRESH":{"Product":"Wizard"}}' >
+                        <a data-toggle="modal" href="#CreateProductModal" class="btn btn-small">Add Product</a>
+                    </li>
+                </ul>
+                <ul class="controls" data-role="Service">
+                    <li class="control" data-context='{"_self_id":[@ MessageID @], "_response_target":"#ProductEditor"}' data-intent='{"REFRESH":{"Product":"Edit"}}' >
+                        <a data-toggle="modal" href="#EditProductModal" class="btn btn-small">Edit Product</a>
+                    </li>
+                </ul>
+                </td>                
+	</Render:Markup>
+	<Render:Markup bind="ProdLib" tag="tr" class="instance collapsable" data-self="[@ _self @]">
+                <td class="center uniformjs"><div class="checker" id="uniform-undefined-[@ MessageID @]"><span><input type="checkbox" value="[@ MessageID @]" style="opacity: 0;" /></span></div></td>
+                <td class="center">[@ name @]</td>
+                <td class="center">[@ content @]</td>
+                <td class="center">[@ creator @]</td>
+                <td class="center">[@ product_line @]</td>
+                <td class="center">[@ nitro @]</td>
+                <td class="center">[@ phosph @]</td>
+                <td class="center">[@ pot @]</td>
+                <td class="center">
+                <ul class="controls" data-role="Service">
+                    <li data-intent="{'Component':{'Editor':{'_self_id':[@ MessageID @]]" ></li>
+                </ul>
+                </td>                
+	</Render:Markup>
+	<Render:Markup bind="ProdLib" tag="thead" class="widget-head">
+		<tr role="row">
+			<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering eng.: activate to sort column descending" style="width: 260px;">Rendering eng.</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 425px;">Browser</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 388px;">Platform(s)</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Eng. vers.: activate to sort column ascending" style="width: 174px;">Eng. vers.</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 180px;">CSS grade</th>
+		</tr>
+	</Render:Markup>
+</Template>

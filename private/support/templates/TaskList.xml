@@ -1,0 +1,29 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:Task type="json">
+	{
+		"tasks":
+		{
+			"id" : "_self_id",
+			"postcode" : "zip",
+			"name" : "title",
+			"notes" : "comment",
+			"address" : "street",
+			"city" : "metro",
+			"state" : "region"
+		}
+	}
+	</Component:Task>
+	<Render:Markup bind="Task" tag="tr">
+            <td class="center uniformjs">
+                <ul class="controls" data-role="Service">
+                <li class="control" style="float: left;padding-bottom: 4px;" data-context='{"_self_id":[@ _self_id @], "_response_target":"#TaskEditor"}' data-intent='{"REFRESH":{"Task":"Edit"}}' >
+                    <a data-toggle="modal" href="#EditTaskModal"><span class="glyphicons pencil nice_yellowish"><i style="font-size:24px;"></i></span></a>
+                </li>
+            </ul>
+            </td>
+			<td class="center">[@ title @]</td>
+			<td class="center">[@ comment @]</td>
+			<td class="center"><span style="float: left;">[@ street @]</span><span style="float:right">[@ metro @], [@ zip @]</span></td>
+			<td class="center">[@ region @]</td>
+	</Render:Markup>
+</Template>

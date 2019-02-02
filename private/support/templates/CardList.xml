@@ -1,0 +1,38 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+<Component:Postcard type="json">
+{
+    "compositions" : { "title" : "AppName" }
+}
+</Component:Postcard>
+<Render:Markup bind="Postcard" tag="ul" class="Postcard">
+    <li class="Thumbnail">
+        <a href="http://yoursite.com:8082/[@ Category @]/[@ Studio @]/[@ AppName @]"> <img src="[@ Thumbnail @]" alt="[@ Subtitle @]" title="[@ Subtitle @]" /> </a></li>
+    <li class="Rating"><img src="http://www.yoursite.com/img/rate[@ Rating @].png" /></li>
+    <li class="Subtitle"> <a href="http://yoursite.com:8082/[@ Category @]/[@ Studio @]/[@ AppName @]">  [@ AppName @] </a> </li>
+    <li class="more">
+        <ul class="ExtendedInfo">
+            <li class="AppName">[@ AppName @]</li>
+            <li class="Rating"><img src="http://www.yoursite.com/img/rate[@ Rating @].png" />( [@ Votes @])</li>
+            <li class="Platform"><span>[@ isiOS @]</span><span>[@ isAndroid @]</span></li>
+            <li class="Description">[@ Description @]</li>
+            <li class="Downloads"><a href="[@ ProfileLink @]"> <span>[@ Price @]</span> </a><span class="Share"></span></li>
+        </ul>
+    </li>
+</Render:Markup>
+<Render:Markup bind="Postcard" section="none" tag="ul" class="Postcard">
+    <li class="Thumbnail">
+        <a href="http://yoursite.com:8082/[@ Category @]/[@ Studio @]/[@ AppName @]"> <img src="[@ Thumbnail @]" alt="[@ Subtitle @]" title="[@ Subtitle @]" /> </a></li>
+    <li class="Rating"><img src="http://www.yoursite.com/img/rate[@ Rating @].png" /></li>
+    <li class="Subtitle"> <a href="http://yoursite.com:8082/[@ Category @]/[@ Studio @]/[@ AppName @]">  [@ AppName @] </a> </li>
+    <li class="more">
+        <ul class="ExtendedInfo">
+            <li class="AppName">[@ AppName @]</li>
+            <li class="Rating"><img src="http://www.yoursite.com/img/rate[@ Rating @].png" />( [@ Votes @])</li>
+            <li class="Platform"><span>[@ isiOS @]</span><span>[@ isAndroid @]</span></li>
+            <li class="Description">[@ Description @]</li>
+            <li class="Downloads"><a href="[@ ProfileLink @]"> <span>[@ Price @]</span> </a><span class="Share"></span></li>
+        </ul>
+    </li>
+</Render:Markup>
+
+</Template>

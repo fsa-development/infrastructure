@@ -1,0 +1,62 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:Product type="json">
+	{
+		"products":
+		{
+			"title" : "name",
+            "parentType":"CatName",
+            "typeName": "TypeName",
+			"markup" : "content",
+            "image" : "thumb",
+			"manufacturer" : "creator",
+			"series" : "product_line",
+			"series_info" : "line_tips",
+			"nitro" : "nitro",
+			"phosphor" : "phosph",
+			"potass" : "pot",
+			"sulfur" : "sulfide",
+			"id" : "MessageID"
+		}
+	}
+	</Component:Product>	
+	<Render:Markup bind="Product" tag="tr" class="instance selectable" data-self="[@ MessageID @]">
+                <td class="center uniformjs">
+                    <ul class="controls" data-role="Service">
+                    <li style="float: left;"  class="control" data-context="{}" data-intent="{}">
+                        <a onclick=" $('#ProdDescript[@ MessageID @]').toggle(); "><span class="glyphicons circle_plus nice_green"><i style="font-size:24px;"></i></span></a>
+                    </li>
+                    <li class="control" style="float: left;padding-bottom: 4px;" data-context='{"_self_id":[@ MessageID @], "_response_target":"#ProductEditor"}' data-intent='{"REFRESH":{"Product":"Edit"}}' >
+                        <a data-toggle="modal" href="#EditProductModal"><span class="glyphicons pencil nice_yellowish"><i style="font-size:24px;"></i></span></a>
+                        <!--a  class="btn btn-small">Edit Product</a> -->
+                    </li>
+                </ul>
+                </td>
+                <td class="center">[@ name @]</td>
+                <td class="center">[@ CatName @]</td>
+                <td class="center">[@ TypeName @]</td>
+                <td class="center">[@ creator @]</td>
+                <td class="center">[@ product_line @]</td>
+	</Render:Markup>
+	<Render:Markup bind="Product" tag="tr" class="instance selectable" data-self="[@ MessageID @]">
+        <td colspan="6">
+            <div class="row-details">
+                <img src="[@ thumb @]" alt="[@ name @]" style="float: left; height: 100%; " />
+                <div class="details" style="float: right; display: inline-block; ">
+                    Category: <b>[@ CatName @]</b>, <b>[@ TypeName @]</b><br/>
+                    Manufacturer: <b>[@ creator @}</b>, <b></b><br/>
+                    NPK ratio: <b>[@ nitro @] | [@ phosph @] | [@ pot @]</b>
+                </div>
+                <div class="description">[@ content @]</div>
+            </div>
+        </td>
+	</Render:Markup>
+	<Render:Markup bind="Product" tag="thead" class="widget-head">
+		<tr role="row">
+			<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering eng.: activate to sort column descending" style="width: 260px;">Rendering eng.</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 425px;">Browser</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 388px;">Platform(s)</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Eng. vers.: activate to sort column ascending" style="width: 174px;">Eng. vers.</th>
+			<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 180px;">CSS grade</th>
+		</tr>
+	</Render:Markup>
+</Template>

@@ -1,0 +1,7 @@
+{
+    "require": {
+    },
+    "config":{
+        "vendor-dir": "/srv/fsa/support/datasets/tools/"
+    }
+}

@@ -1,0 +1,21 @@
+<?php
+
+global $RuntimePath;
+global $DeployPath;
+global $SupportPath;
+global $StaticFiles;
+
+require_once $RuntimePath .'/composition/dynamic_layout.php';
+
+    $Main->children[] = $FrontEndRow =
+        new renderable(['tag'=>'li','classes'=>['col-md-12','layoutRow']]);
+    
+    	$o['ListingDetail']['listings']=  [
+            'method' => 'WHERE title LIKE "' . $CurrentURLNode['alias'] .'" AND `agent` = '.$OwnerID,
+            'condition'=>'LIMIT 0, 1'
+        ];
+        $o['tag']= 'div';
+    	$o['template']=$SupportPath .'/templates/'.'ListingDetail'.'.xml';
+        $FrontEndRow->children[] = new Smart($o);
+
+?>

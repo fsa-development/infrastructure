@@ -1,0 +1,49 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:Message type="json">
+	{
+		"messages":
+		{
+			"title" : "MessageHeading",
+			"message" : "MessageContent",
+			"post_date" : "DatePosted",
+			"up_votes" : "VotesUp",
+			"down_votes" : "VotesDown",
+			"p_id" : "parent",
+			"id" : "MessageID"
+		},
+		"users":
+		{
+			"display_name" : "Alias",
+			"username" : "Name",
+			"thumbnail" : "img"
+		}
+	}
+	</Component:Message>
+
+	<Render:Markup bind="Message" tag="ul" class="MediaList">
+	<div class="instance Interface">
+		<ul class="profile">
+			<li class="avatar"><a class="pull-left" href="https://[@ Name @].myrealestatesite.co/"><img class="media-object" src="https://static.myrealestatesite.co/uploads[@ img @]" alt="[@ Name @]" /></a></li>
+			<li class="alias"><a href="https://[@ Name @].myrealestatesite.co/">[@ Alias @]</a></li>
+		</ul>
+		<ul class="contents InterfaceContents">
+			<li class="heading"><h3>[@ MessageHeading @]</h3></li>
+			<li class="body"><article>[@ MessageContent @]</article></li>
+			<li class="post-date">[@ DatePosted @]</li>
+			<li class="social controls">
+				<span class="vote">
+					<button class="fa fa-caret-up" >[@ VotesUp @]</button>
+					<button class="fa fa-caret-down">[@ VotesDown @]</button>
+				</span>
+				<!--name is MessageID for figuring out which message is being replied to-->
+				<a class="control clearfix"
+                       data-self="[@ MessageID @]"
+                       data-context='{"__self_id":[@ MessageID @], "_MessageHeading": "[@ MessageHeading @]", "_response_target":"#TicketMessages > div.Messages > div.Message:has(div.instance > ul.contents > li.controls > a.control[data-self=[@ MessageID @]])  "}'
+                       data-intent='{"AFTER":{"Message":"ReplyBox"}}' >
+                    Reply
+                </a>
+			</li>
+		</ul>
+	</div>
+	</Render:Markup>
+</Template>

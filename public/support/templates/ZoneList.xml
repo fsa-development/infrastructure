@@ -1,0 +1,41 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:Zone type="json">
+	{
+		"zones":
+		{
+			"id" : "_self_id",
+			"location" : "loc_id",
+            "name": "zoneName",
+			"notes" : "comment",
+			"grow_method" : "grow_methodValue",
+            "grow_medium" : "grow_mediumValue",
+            "co2_pressure" : "co2_pressureValue",
+            "humidity": "how_humid",
+            "num_fans" : "num_fansValue",
+            "grow_lights" : "grow_lightsValue",
+            "has_cooling" : "has_coolingValue"
+		}
+	}
+	</Component:Zone>
+	<Render:Markup bind="Zone" tag="tr">
+            <td class="center uniformjs">
+                <ul class="controls" data-role="Service">
+                <li class="control" style="float: left;padding-bottom: 4px;" data-context='{"_self_id":[@ loc_id @], "_response_target":"#ZoneEditor"}' data-intent='{"REFRESH":{"Zone":"Edit"}}' >
+                    <a data-toggle="modal" href="#EditZoneModal">
+                        <span class="glyphicons pencil nice_yellowish"><i style="font-size:24px;"></i></span>
+                    </a>
+                </li>
+            </ul>
+            </td>
+            <td>[@ zoneName @]</td>
+            <td>[@ locationName @]</td>
+            <td>[@ comment @]</td>
+            <td>[@ grow_methodName @]</td>
+            <td>[@ grow_mediumName @]</td>
+            <td>[@ grow_lightsName @]</td>
+            <td>[@ has_coolingName@]</td>
+            <td>[@ c02_pressureName @]</td>
+            <td>[@ how_humidName @]</td>
+            <td>[@ num_fansName @]</td>
+	</Render:Markup>
+</Template>

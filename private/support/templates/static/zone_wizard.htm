@@ -1,0 +1,41 @@
+<!-- Zone Wizard Modal inside #ZoneWizard -->
+<div class="modal-content Content">
+  <form method="post" action="dataset://zones">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4>Create Zone</h4>
+  </div>
+  
+  <div class="modal-body">
+
+    <label for="_locat" class="col-sm-8 control-label text-left">Location:</label>
+    [@ zoneLocationSelect @]<br /><br />
+    
+    <label for="_zoneName" class="col-sm-8 control-label text-left">Zone Name:</label>
+    <input type="text" data-field="name" name="_zoneName" class="form-control json-data  m-b" required="" minlength="5" "/>
+    <br /><br />
+    
+    <label for="_zoneCooling" class="col-sm-6 control-label text-left">Cooling</label>
+    [@ zoneCoolingSelect @]<br /><br />
+    
+    <label for="_zoneHumidity" class="col-sm-4 control-label text-left">Humidity</label>
+    [@ zoneHumiditySelect @]
+    <br /><br />
+    
+    <label for="_zoneLighting" class="col-sm-4 control-label text-left">Lighting/Wattage</label>
+    [@ zoneLightingSelect @]
+    <br /><br />
+    
+    <label for="_zoneFans" class="col-sm-4 control-label text-left">Number of Fans</label>
+    [@ zoneFansSelect @]<br /><br />
+</div>
+  <div class="modal-footer">
+      <ul class="controls" style="display: inline-block; float:right;">
+          <li class="control" data-context='{"_self_id":"", "_response_target":"#Zone"}' data-role="autoform" data-intent='{"REFRESH":{"Zone":"Save"}}'>
+          <button type="button" class="btn btn-primary btn-default" data-dismiss="modal" >Save</button>
+          </li>
+      </ul>
+      <button type="button" class="btn btn-default btn-warning" data-dismiss="modal" style="float: left;">Cancel</button>
+  </div>
+  </form>
+</div>

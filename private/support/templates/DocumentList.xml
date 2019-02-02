@@ -1,0 +1,32 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:DocumentList type="json">
+	{
+		"documents":
+		{
+            "id" : "_self_id",
+            "status":"activity",
+			"updated":"last_on",
+			"created":"document_date",
+			"agent" : "usr",
+            "category" : "cat0",
+            "sub_category" : "cat1",
+			"title" : "info",
+			"comment" : "note",
+			"message" : "discussion"
+		}
+	}
+	</Component:DocumentList>	
+	<Render:Markup bind="DocumentList" tag="tr" class="instance selectable" data-self="[@ _self_id @]">
+                <td style="width: 18%" class="control"
+					data-role="Service"
+					data-self="[@ _self_id @]"
+					data-context='{"_self_id":[@ _self_id @], "_response_target":"#DocumentArticles > .RefreshTarget"}'
+					data-intent='{"REFRESH":{"Article":"View"}}' >
+                    <a alt="Document Settings">
+                        <span class="DocumentStatus Document[@ activity @]">[@ cat0 @]</span>
+                        <h2>[@ info @] </h2>
+						<span class="DocumentDate DocumentDate[@ activity @]">[@ cat1 @]</span>
+                    </a>
+                </td>
+	</Render:Markup>
+</Template>

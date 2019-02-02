@@ -1,0 +1,30 @@
+<Template xmlns:Component="Component://approach.im" xmlns:Render="Render://approach.im">
+	<Component:Article type="json">
+	{
+		"documents":
+		{
+            "id" : "_self_id",
+			"article" : "doc",
+            "status":"activity",
+			"updated":"last_on",
+			"created":"document_date",
+			"agent" : "usr",
+            "category" : "cat0",
+            "sub_category" : "cat1",
+			"title" : "info",
+			"comment" : "note",
+			"link": "url",
+			"message" : "discussion"
+		}
+	}
+	</Component:Article>
+	<Render:Markup bind="Article" tag="tr" class="instance selectable" data-self="[@ _self_id @]">
+	<div class="instance Interface">
+		<ul class="contents InterfaceContents">
+			<li class="heading"><h3>[@ info @]</h3><a href="[@ url @]">Download</a></li>
+			<li class="body"><article><iframe src="[@ doc @]" /></article></li>
+			<li class="post-date">[@ document_date @]</li>
+		</ul>
+	</div>
+	</Render:Markup>
+</Template>
